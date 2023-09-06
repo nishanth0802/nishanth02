@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    
+<link rel="stylesheet" href="calculator.css">
+<div class="container">
+
+    <div class="CALC">
+
+<input type="text" id="result" >
+<button onclick="onClear()">CL</button>
+<button onclick="delnum()">DEL</button>
+<button onclick="display('%')">%</button>
+<button onclick="display('/')">/</button>
+<button onclick="display('7')">7</button>
+<button onclick="display('8')">8</button>
+<button onclick="display('9')">9</button>
+<button onclick="display('*')">*</button>
+<button onclick="display('4')">4</button>
+<button onclick="display('5')">5</button>
+<button onclick="display('6')">6</button>
+<button onclick="display('-')">-</button>
+<button onclick="display('1')">1</button>
+<button onclick="display('2')">2</button>
+<button onclick="display('3')">3</button>
+<button onclick="display('+')">+</button>
+<button onclick="display('.')">.</button>
+<button onclick="display('0')">0</button>
+<button onclick="display('00')">00</button>
+<button onclick="sqt()">sqt</button>
+<button onclick="piv()">PI</button>
+
+<button onclick="equal()" class="answer">=</button>
+    </div></div>
+
+</body>
+
+<script>
+
+let screen=" ";
+function onClear(){
+    screen='';
+    document.getElementById("result").value = " ";
+}
+
+
+function display(value){
+    
+    screen +=value;
+    document.getElementById("result").value= screen;
+
+}
+
+
+function delnum(){
+screen=" ";
+    result.value=result.value.slice(0,-1);
+
+}
+
+function piv(){
+    result.value=Math.PI;
+}
+
+function sqt(){
+
+    result.value=Math.sqrt(result.value);
+}
+
+function equal(){
+    let result;
+    if(screen.includes("+"))
+    {
+        const num=screen.split("+");
+        result=parseFloat(num[0])+ parseFloat(num[1]);
+
+    }
+    else if(screen.includes("-"))
+    {
+        const num=screen.split("-");
+        result=parseFloat(num[0])- parseFloat(num[1]);    
+}
+else if(screen.includes("*"))
+    {
+        const num=screen.split("*");
+        result=parseFloat(num[0])* parseFloat(num[1]);    
+}
+else if(screen.includes("/"))
+    {
+        const num=screen.split("/");
+        result=parseFloat(num[0])/ parseFloat(num[1]);    
+}
+else if(screen.includes("%"))
+    {
+        const num=screen.split("%");
+        result=parseFloat(num[0])% parseFloat(num[1]);    
+}   
+
+else if(screen.includes(''))
+      
+      {
+          result=("INVALID INPUT");
+      }
+
+      
+
+      document.getElementById('result').value = result;
+      screen = result.toString();
+  }
+  console.log("project by nishanth")
+
+
+</script>
+
+
+</html>
